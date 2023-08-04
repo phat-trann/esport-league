@@ -1,16 +1,15 @@
-import { useState } from 'react';
+import { useRoutes } from 'react-router-dom';
+import { Home } from './pages';
 
 function App() {
-    const [count, setCount] = useState(0);
+    const router = useRoutes([
+        {
+            path: '/',
+            element: <Home />
+        }
+    ]);
 
-    return (
-        <>
-            <h1>E-sport League</h1>
-            <div className="card">
-                <button onClick={() => setCount((count) => count + 1)}>count is {count}</button>
-            </div>
-        </>
-    );
+    return router;
 }
 
 export default App;
